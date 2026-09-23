@@ -1,0 +1,47 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-barro: #b4451f;
+  --color-barro-escuro: #7c2d12;
+  --color-areia: #fdf6ec;
+  --color-palha: #e8d9c0;
+  --color-folha: #15803d;
+  --color-milho: #d99a2b;
+  --color-tinta: #3a2415;
+
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-sans: 'Nunito', 'ui-sans-serif', 'system-ui', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(60rem 30rem at 15% -10%, color-mix(in srgb, var(--color-milho) 12%, transparent), transparent),
+    radial-gradient(50rem 25rem at 110% 0%, color-mix(in srgb, var(--color-barro) 10%, transparent), transparent),
+    var(--color-areia);
+  color: var(--color-tinta);
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+}
+
+::selection {
+  background-color: var(--color-milho);
+  color: var(--color-tinta);
+}
+
+/* Alvo de toque confortável no totem, onde o uso é em pé e sem mouse. */
+[data-channel='totem'] button,
+[data-channel='totem'] a {
+  min-height: 3rem;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-barro);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
